@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mates</string>
+    <string name="questions_name">Questions</string>
+    <string name="FindingMates_name">FindingMates</string>
+</resources>

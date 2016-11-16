@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/send_message"
+        android:icon="@drawable/chat"
+        android:title="메시지보내기"
+        app:showAsAction="always"/>
+
+    <item android:title="신고하기"
+        android:id="@+id/report"
+        android:icon="@drawable/report"
+        app:showAsAction="always" />
+</menu>
