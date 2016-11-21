@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.WorkerThread;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -22,47 +24,26 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     private int resultCount;
-    private int mProgressStatus = 0;
     private Button resultMates;
     private ArrayList<Question> items;
     private QuestionAdapter questionAdapter;
     private ProgressBar mProgress;
-    private Handler mHandler = new Handler();
 
 
     @InjectView(R.id.frame)
     SwipeFlingAdapterView flingContainer;
 
-    private Runnable foreTask = new Runnable() {
-        @Override
-        public void run() {
-            mProgress.setProgress(mProgressStatus);
-        }
-    };
-
-    private Runnable backTask = new Runnable() {
-        @Override
-        public void run() {
-            while(mProgressStatus<=5){
-                mProgressStatus = resultCount;
-                mProgress.post(foreTask);
-            }
-        }
-    };
-
-
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questiion);
 
         resultMates = (Button) findViewById(R.id.resultMates);
+
         mProgress = (ProgressBar) findViewById(R.id.progressBar);
-
-
-//        Thread thread = new Thread(backTask);
-//        thread.start();  프로그레스바 하면 느려짐...
-
+        mProgress.setProgress(0);
+        mProgress.setMax(5);
 
 
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
@@ -91,6 +72,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 ++resultCount;
+                mProgress.setProgress(resultCount);
                 Log.d("LIST", "removed object!" + resultCount);
                 items.remove(0);
                 questionAdapter.notifyDataSetChanged();
@@ -136,9 +118,9 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
     }
-    public void showResultMates(View view)
-    {
-        Intent intent = new Intent(this,FindingMates.class);
+
+    public void showResultMates(View view) {
+        Intent intent = new Intent(this, FindingMates.class);
         startActivity(intent);
     }
 

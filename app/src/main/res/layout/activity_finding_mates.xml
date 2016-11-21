@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dl_activity_finding_mates_drawer"
     android:layout_width="match_parent"
@@ -42,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/user"/>
+            android:src="@drawable/user" />
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
@@ -54,16 +56,16 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/avatar"
-                android:onClick="clickprofile"/>
+                android:onClick="clickprofile"
+                android:src="@drawable/avatar" />
 
             <TextView
-                android:paddingLeft="16dp"
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="profile"
-                android:onClick="clickprofile"/>
+                android:gravity="center_vertical"
+                android:onClick="clickprofile"
+                android:paddingLeft="16dp"
+                android:text="profile" />
 
         </LinearLayout>
 
@@ -77,18 +79,19 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/chat"
-                android:onClick="clickchat"/>
+                android:onClick="clickchat"
+                android:src="@drawable/chat" />
 
             <TextView
-                android:paddingLeft="16dp"
-                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="Message"
-                android:onClick="clickchat"/>
+                android:gravity="center_vertical"
+                android:onClick="clickchat"
+                android:paddingLeft="16dp"
+                android:text="Message" />
 
         </LinearLayout>
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,23 +102,24 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginRight="24dp"
-                android:src="@drawable/settings"
-                android:onClick=""/>
+                android:onClick="clicksetting"
+                android:src="@drawable/settings" />
 
             <TextView
-                android:paddingLeft="16dp"
-                android:gravity="center_vertical"
+                android:onClick="clicksetting"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="Settings"/>
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:text="Settings" />
 
         </LinearLayout>
 
         <Button
-            android:layout_marginTop="40dp"
-            android:layout_gravity="bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="40dp"
             android:text="logout" />
 
     </LinearLayout>

@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".FindingMates"
-            android:label="@string/FindingMates_name" />
+            android:label="@string/FindingMates_name"/>
         <activity android:name=".Mate_detail"></activity>
     </application>
 

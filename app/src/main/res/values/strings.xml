@@ -2,4 +2,6 @@
     <string name="app_name">Mates</string>
     <string name="questions_name">Questions</string>
     <string name="FindingMates_name">FindingMates</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
 </resources>

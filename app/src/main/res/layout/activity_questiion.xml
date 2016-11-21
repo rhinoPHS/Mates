@@ -13,6 +13,6 @@
         tools:context=".MyActivity" />
 
     <include layout="@layout/buttons"/>
-    <!--<include layout="@layout/progressbar"/>-->
+    <include layout="@layout/progressbar"/>
 
 </merge>

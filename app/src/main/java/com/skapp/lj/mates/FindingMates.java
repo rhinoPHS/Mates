@@ -1,13 +1,17 @@
 package com.skapp.lj.mates;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -27,9 +31,7 @@ public class FindingMates extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<MyData> myDataset;
 
-    private DrawerLayout dlDrawer;
-    private ActionBarDrawerToggle dtToggle;
-
+    ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +71,58 @@ public class FindingMates extends AppCompatActivity {
 
         /*spinner end*/
 
-        /*navigation drawer start*/
+        /*navigation drawer ActionBar toggle*/
 
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+
+        DrawerLayout drawerLayout = (DrawerLayout)findViewById(R.id.dl_activity_finding_mates_drawer);
+
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout,R.string.open_drawer,R.string.close_drawer){
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+            }
+        };
+        drawerLayout.addDrawerListener(drawerToggle);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        drawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(drawerToggle.onOptionsItemSelected(item))
+            return true;
+        return super.onOptionsItemSelected(item);
+    };
+
+    public void clickprofile(View view){
+        Toast.makeText(this,"profile",Toast.LENGTH_SHORT).show();
+    }
+
+    public void clickchat(View view){
+        Toast.makeText(this,"char",Toast.LENGTH_SHORT).show();
+    }
+    public void clicksetting(View view){
+        Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show();
     }
 
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
