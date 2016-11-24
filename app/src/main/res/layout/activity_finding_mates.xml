@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context="com.skapp.lj.mates.FindingMates">
 
-    <RelativeLayout
+    <FrameLayout
         android:id="@+id/activity_finding_mates"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,108 +22,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:entries="@array/city"></Spinner>
+            android:entries="@array/city" />
 
         <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="32dp"
             android:id="@+id/my_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/spinner_city"
             android:scrollbars="vertical" />
-    </RelativeLayout>
+    </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="240dp"
+    <ListView android:layout_width="240dp"
         android:layout_height="match_parent"
+        android:id="@+id/lv_activity_main_nav_list"
         android:layout_gravity="start"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#EDEDED"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/user" />
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/activity_horizontal_margin">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginRight="24dp"
-                android:onClick="clickprofile"
-                android:src="@drawable/avatar" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:gravity="center_vertical"
-                android:onClick="clickprofile"
-                android:paddingLeft="16dp"
-                android:text="profile" />
-
-        </LinearLayout>
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/activity_horizontal_margin">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginRight="24dp"
-                android:onClick="clickchat"
-                android:src="@drawable/chat" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:gravity="center_vertical"
-                android:onClick="clickchat"
-                android:paddingLeft="16dp"
-                android:text="Message" />
-
-        </LinearLayout>
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/activity_horizontal_margin">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginRight="24dp"
-                android:onClick="clicksetting"
-                android:src="@drawable/settings" />
-
-            <TextView
-                android:onClick="clicksetting"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="16dp"
-                android:text="Settings" />
-
-        </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="40dp"
-            android:text="logout"
-            android:onClick="logout"/>
-
-    </LinearLayout>
 
 
 </android.support.v4.widget.DrawerLayout>

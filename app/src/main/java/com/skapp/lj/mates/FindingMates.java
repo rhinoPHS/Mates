@@ -2,6 +2,7 @@ package com.skapp.lj.mates;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -33,7 +36,17 @@ public class FindingMates extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<MyData> myDataset;
 
-    ActionBarDrawerToggle drawerToggle;
+    private String[] navItems = {"Brown", "Cadet Blue", "Dark Olive Green",
+            "Dark Orange", "Golden Rod"};
+
+    private ListView lvNavList;
+
+    private FrameLayout flContainer;
+
+    private DrawerLayout dlDrawer;
+    private ActionBarDrawerToggle drawerToggle;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,34 +65,46 @@ public class FindingMates extends AppCompatActivity {
         mAdapter = new MyAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
 
-        myDataset.add(new MyData("박해성","안녕하세요",R.drawable.user));
-        myDataset.add(new MyData("양수장","좋은 분 만나요",R.drawable.user));
-        myDataset.add(new MyData("김대현","잘됐으면 좋겠어요",R.drawable.user));
+        myDataset.add(new MyData("박해성", "안녕하세요", R.drawable.user));
+        myDataset.add(new MyData("양수장", "좋은 분 만나요", R.drawable.user));
+        myDataset.add(new MyData("김대현", "잘됐으면 좋겠어요", R.drawable.user));
 
         /*cardview end*/
 
         /*spinner start*/
 
-        spinner_city = (Spinner)findViewById(R.id.spinner_city);
+        spinner_city = (Spinner) findViewById(R.id.spinner_city);
         spinner_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText(getApplicationContext(),"position : "+position +parent.getItemAtPosition(position),
 //                        Toast.LENGTH_SHORT).show();
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {}
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
         });
 
         /*spinner end*/
+
+        /* 리스트뷰 메뉴 항목 */
+        lvNavList = (ListView) findViewById(R.id.lv_activity_main_nav_list);
+        flContainer = (FrameLayout) findViewById(R.id.activity_finding_mates);
+
+        lvNavList.setAdapter(
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, navItems));
+        lvNavList.setOnItemClickListener(new DrawerItemClickListener());
+
+
 
         /*navigation drawer ActionBar toggle*/
 
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
-        DrawerLayout drawerLayout = (DrawerLayout)findViewById(R.id.dl_activity_finding_mates_drawer);
+        dlDrawer = (DrawerLayout) findViewById(R.id.dl_activity_finding_mates_drawer);
 
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout,R.string.open_drawer,R.string.close_drawer){
+        drawerToggle = new ActionBarDrawerToggle(this, dlDrawer, R.string.open_drawer, R.string.close_drawer) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -90,11 +115,36 @@ public class FindingMates extends AppCompatActivity {
                 super.onDrawerClosed(drawerView);
             }
         };
-        drawerLayout.addDrawerListener(drawerToggle);
-
+        dlDrawer.addDrawerListener(drawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+
+        @Override
+        public void onItemClick(AdapterView<?> adapter, View view, int position,
+                                long id) {
+            switch (position) {
+                case 0:
+                    flContainer.setBackgroundColor(Color.parseColor("#A52A2A"));
+                    break;
+                case 1:
+                    flContainer.setBackgroundColor(Color.parseColor("#5F9EA0"));
+                    break;
+                case 2:
+                    flContainer.setBackgroundColor(Color.parseColor("#556B2F"));
+                    break;
+                case 3:
+                    flContainer.setBackgroundColor(Color.parseColor("#FF8C00"));
+                    break;
+                case 4:
+                    flContainer.setBackgroundColor(Color.parseColor("#DAA520"));
+                    break;
+            }
+            dlDrawer.closeDrawer(lvNavList);
+        }
     }
 
     @Override
@@ -111,23 +161,27 @@ public class FindingMates extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(drawerToggle.onOptionsItemSelected(item))
+        if (drawerToggle.onOptionsItemSelected(item))
             return true;
         return super.onOptionsItemSelected(item);
-    };
-
-    public void clickprofile(View view){
-        Toast.makeText(this,"profile",Toast.LENGTH_SHORT).show();
     }
 
-    public void clickchat(View view){
-        Toast.makeText(this,"char",Toast.LENGTH_SHORT).show();
+    ;
+
+    public void clickprofile(View view) {
+        Toast.makeText(this, "profile", Toast.LENGTH_SHORT).show();
     }
-    public void clicksetting(View view){
-        Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show();
+
+    public void clickchat(View view) {
+        Toast.makeText(this, "char", Toast.LENGTH_SHORT).show();
     }
-    public void logout(View view){
-        Toast.makeText(this,"logout",Toast.LENGTH_SHORT).show();
+
+    public void clicksetting(View view) {
+        Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show();
+    }
+
+    public void logout(View view) {
+        Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show();
     }
 
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
@@ -144,15 +198,15 @@ public class FindingMates extends AppCompatActivity {
 
             public ViewHolder(View view) {
                 super(view);
-                mImageView = (ImageView)view.findViewById(R.id.profile_photo);
-                mTextView = (TextView)view.findViewById(R.id.textview);
-                txtV_say = (TextView)view.findViewById(R.id.txtV_say);
+                mImageView = (ImageView) view.findViewById(R.id.profile_photo);
+                mTextView = (TextView) view.findViewById(R.id.textview);
+                txtV_say = (TextView) view.findViewById(R.id.txtV_say);
 
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         int position = getAdapterPosition();
-                        Toast.makeText(getApplicationContext(),"Positon : " + position,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Positon : " + position, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Mate_detail.class);
                         startActivity(intent);
                     }
@@ -194,12 +248,13 @@ public class FindingMates extends AppCompatActivity {
         }
     }
 
-    class MyData{
+    class MyData {
         public String text;
         public String txt_say;
 
         public int img;
-        public MyData(String text, String txt_say, int img){
+
+        public MyData(String text, String txt_say, int img) {
             this.text = text;
             this.txt_say = txt_say;
             this.img = img;
