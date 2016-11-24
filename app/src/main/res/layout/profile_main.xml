@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.skapp.lj.mates.Profile">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@color/buttonSelected"
+        android:text="프로필명" />
+
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="bottom|center"
+        android:orientation="horizontal">
+
+        <Button
+            android:drawableTop="@drawable/user24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프로필수정"
+            android:background="@null"
+            android:layout_marginBottom="16dp"/>
+        <Button
+            android:drawableTop="@drawable/user24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="답변수정"
+            android:background="@null"
+            android:layout_marginBottom="16dp"/>
+        <Button
+            android:drawableTop="@drawable/user24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지역수정"
+            android:background="@null"
+            android:layout_marginBottom="16dp"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
