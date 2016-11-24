@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+
 public class FindingMates extends AppCompatActivity {
 
     private Spinner spinner_city;
@@ -123,6 +125,9 @@ public class FindingMates extends AppCompatActivity {
     }
     public void clicksetting(View view){
         Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show();
+    }
+    public void logout(View view){
+        Toast.makeText(this,"logout",Toast.LENGTH_SHORT).show();
     }
 
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
