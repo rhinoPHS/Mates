@@ -8,6 +8,7 @@
     tools:context="com.skapp.lj.mates.Profile">
 
     <TextView
+        android:id="@+id/txtV_ProfileName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="7"
@@ -25,6 +26,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_ProfileUpdate"
             android:drawableTop="@drawable/user24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,6 +34,7 @@
             android:background="@null"
             android:layout_marginBottom="16dp"/>
         <Button
+            android:id="@+id/btn_QuestionUpdate"
             android:drawableTop="@drawable/user24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,6 +42,7 @@
             android:background="@null"
             android:layout_marginBottom="16dp"/>
         <Button
+            android:id="@+id/btn_RegionUpdate"
             android:drawableTop="@drawable/user24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

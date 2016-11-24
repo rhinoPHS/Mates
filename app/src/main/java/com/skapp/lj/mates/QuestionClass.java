@@ -4,12 +4,12 @@ package com.skapp.lj.mates;
  * Created by a on 2016-11-08.
  */
 
-class Question {
+class QuestionClass {
     private String questionTitle;
     private String answerLeft;
     private String answerRight;
 
-    public Question(String questionTitle, String answerLeft, String answerRight)
+    public QuestionClass(String questionTitle, String answerLeft, String answerRight)
     {
         this.questionTitle = questionTitle;
         this.answerLeft = answerLeft;

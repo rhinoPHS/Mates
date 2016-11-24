@@ -3,9 +3,6 @@ package com.skapp.lj.mates;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.support.annotation.WorkerThread;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +22,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     private int resultCount;
     private Button resultMates;
-    private ArrayList<Question> items;
+    private ArrayList<QuestionClass> items;
     private QuestionAdapter questionAdapter;
     private ProgressBar mProgress;
 
@@ -48,17 +45,17 @@ public class QuestionActivity extends AppCompatActivity {
 
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
-        items = new ArrayList<Question>();
+        items = new ArrayList<QuestionClass>();
 
-        final Question q1 = new Question("당신의 성별은 무엇입니까?", "남자1", "여자1");
+        final QuestionClass q1 = new QuestionClass("당신의 성별은 무엇입니까?", "남자1", "여자1");
         items.add(q1);
-        Question q2 = new Question("당신의 성별은 무엇입니까?", "남자2", "여자2");
+        QuestionClass q2 = new QuestionClass("당신의 성별은 무엇입니까?", "남자2", "여자2");
         items.add(q2);
-        Question q3 = new Question("당신의 성별은 무엇입니까?", "남자3", "여자3");
+        QuestionClass q3 = new QuestionClass("당신의 성별은 무엇입니까?", "남자3", "여자3");
         items.add(q3);
-        Question q4 = new Question("당신의 성별은 무엇입니까?", "남자4", "여자4");
+        QuestionClass q4 = new QuestionClass("당신의 성별은 무엇입니까?", "남자4", "여자4");
         items.add(q4);
-        Question q5 = new Question("당신의 성별은 무엇입니까?", "남자5", "여자5");
+        QuestionClass q5 = new QuestionClass("당신의 성별은 무엇입니까?", "남자5", "여자5");
         items.add(q5);
 
         questionAdapter = new QuestionAdapter(this, R.layout.item, items);

@@ -17,10 +17,10 @@ import java.util.ArrayList;
 class QuestionAdapter extends BaseAdapter {
     Context context;
     LayoutInflater Inflater;
-    ArrayList<Question> arrQuestion;
+    ArrayList<QuestionClass> arrQuestion;
     int layout;
 
-    public QuestionAdapter(Context context, int alayout, ArrayList<Question> aarrQuestion) {
+    public QuestionAdapter(Context context, int alayout, ArrayList<QuestionClass> aarrQuestion) {
         this.context = context;
         Inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.arrQuestion = aarrQuestion;
