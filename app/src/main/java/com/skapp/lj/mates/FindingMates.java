@@ -30,28 +30,66 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class FindingMates extends AppCompatActivity {
 
+    //First We Declare Titles And Icons For Our Navigation Drawer List View
+    //This Icons And Titles Are holded in an Array as you can see
+
+    String TITLES[] = {"Home", "Events", "Mail", "Shop", "Travel"};
+    int ICONS[] = {R.drawable.user24, R.drawable.user24, R.drawable.user24, R.drawable.user24, R.drawable.user24};
+    //Similarly we Create a String Resource for the name and email in the header view
+    //And we also create a int resource for profile picture in the header view
+
+    String NAME = "Akash Bangad";
+    String EMAIL = "akash.bangad@android4devs.com";
+    int PROFILE = R.drawable.avatar;
+
+    private Toolbar toolbar;                              // Declaring the Toolbar Object
+
+    RecyclerView mRecyclerViewNV;                           // Declaring RecyclerView
+    RecyclerView.Adapter mAdapterNV;                        // Declaring Adapter For Recycler View
+    RecyclerView.LayoutManager mLayoutManagerNV;            // Declaring Layout Manager as a linear layout manager
+    DrawerLayout Drawer;                                  // Declaring DrawerLayout
+    ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggl
+
     private Spinner spinner_city;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<MyData> myDataset;
 
-    private String[] navItems = {"Brown", "Cadet Blue", "Dark Olive Green",
-            "Dark Orange", "Golden Rod"};
-
-    private ListView lvNavList;
-
     private FrameLayout flContainer;
-
-    private DrawerLayout dlDrawer;
-    private ActionBarDrawerToggle drawerToggle;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finding_mates);
+
+        /*NV start*/
+        mRecyclerViewNV = (RecyclerView) findViewById(R.id.RecyclerView);
+        mRecyclerViewNV.setHasFixedSize(true);
+        mAdapterNV = new MyAdapterNV(TITLES, ICONS, NAME, EMAIL, PROFILE);
+
+        mRecyclerViewNV.setAdapter(mAdapterNV);
+        mLayoutManagerNV = new LinearLayoutManager(this);
+        mRecyclerViewNV.setLayoutManager(mLayoutManagerNV);
+
+        /*navigation drawer ActionBar toggle*/
+        Drawer = (DrawerLayout) findViewById(R.id.dl_activity_finding_mates_drawer);
+        mDrawerToggle = new ActionBarDrawerToggle(this, Drawer, R.string.open_drawer, R.string.close_drawer) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+            }
+        };
+        Drawer.addDrawerListener(mDrawerToggle);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        /*NV end*/
+
 
         /*cardview start*/
 
@@ -89,74 +127,26 @@ public class FindingMates extends AppCompatActivity {
         /*spinner end*/
 
         /* 리스트뷰 메뉴 항목 */
-        lvNavList = (ListView) findViewById(R.id.lv_activity_main_nav_list);
         flContainer = (FrameLayout) findViewById(R.id.activity_finding_mates);
 
-        lvNavList.setAdapter(
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, navItems));
-        lvNavList.setOnItemClickListener(new DrawerItemClickListener());
 
-
-
-        /*navigation drawer ActionBar toggle*/
-        dlDrawer = (DrawerLayout) findViewById(R.id.dl_activity_finding_mates_drawer);
-        drawerToggle = new ActionBarDrawerToggle(this, dlDrawer, R.string.open_drawer, R.string.close_drawer) {
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-            }
-        };
-        dlDrawer.addDrawerListener(drawerToggle);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-    }
-
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-
-        @Override
-        public void onItemClick(AdapterView<?> adapter, View view, int position,
-                                long id) {
-            switch (position) {
-                case 0:
-                    flContainer.setBackgroundColor(Color.parseColor("#A52A2A"));
-                    break;
-                case 1:
-                    flContainer.setBackgroundColor(Color.parseColor("#5F9EA0"));
-                    break;
-                case 2:
-                    flContainer.setBackgroundColor(Color.parseColor("#556B2F"));
-                    break;
-                case 3:
-                    flContainer.setBackgroundColor(Color.parseColor("#FF8C00"));
-                    break;
-                case 4:
-                    flContainer.setBackgroundColor(Color.parseColor("#DAA520"));
-                    break;
-            }
-            dlDrawer.closeDrawer(lvNavList);
-        }
     }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        drawerToggle.syncState();
+        mDrawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        drawerToggle.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (drawerToggle.onOptionsItemSelected(item))
+        if (mDrawerToggle.onOptionsItemSelected(item))
             return true;
         return super.onOptionsItemSelected(item);
     }
