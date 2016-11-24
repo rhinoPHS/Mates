@@ -67,13 +67,29 @@ public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent intent;
                     int position = getAdapterPosition();
-                    Toast.makeText(view.getContext(), "Positon : " + position, Toast.LENGTH_SHORT).show();
-//                    if(position == 0)
-//                    {
-//                        Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-//                        view.getContext().startActivity(intent);
-//                    }
+
+                    switch (position)
+                    {
+                        case 0:case 1:
+                            intent = new Intent(view.getContext(),Profile.class);
+                            view.getContext().startActivity(intent);
+                            break;
+                        case 2:
+                            Toast.makeText(view.getContext(),"message",Toast.LENGTH_SHORT).show();
+                            break;
+                        case 3:
+                            Toast.makeText(view.getContext(),"setting",Toast.LENGTH_SHORT).show();
+                            break;
+                        case 4:
+                            Toast.makeText(view.getContext(),"logout",Toast.LENGTH_SHORT).show();
+                            break;
+                        case 5:
+                            Toast.makeText(view.getContext(),"etc",Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+
                 }
             });
         }
@@ -82,7 +98,8 @@ public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
     }
 
 
-    MyAdapterNV(String Titles[], int Icons[], String Name, String Email, int Profile) { // MyAdapterNV Constructor with titles and icons parameter
+    MyAdapterNV(String Titles[], int Icons[], String Name, String Email, int Profile) {
+        // MyAdapterNV Constructor with titles and icons parameter
         // titles, icons, name, email, profile pic are passed from the main activity as we
         mNavTitles = Titles;                //have seen earlier
         mIcons = Icons;
