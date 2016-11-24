@@ -33,7 +33,7 @@ public class FindingMates extends AppCompatActivity {
     //First We Declare Titles And Icons For Our Navigation Drawer List View
     //This Icons And Titles Are holded in an Array as you can see
 
-    String TITLES[] = {"Home", "Events", "Mail", "Shop", "Travel"};
+    String TITLES[] = {"Profile", "Message", "Settings", "Logout", "etc"};
     int ICONS[] = {R.drawable.user24, R.drawable.user24, R.drawable.user24, R.drawable.user24, R.drawable.user24};
     //Similarly we Create a String Resource for the name and email in the header view
     //And we also create a int resource for profile picture in the header view
@@ -69,6 +69,7 @@ public class FindingMates extends AppCompatActivity {
         mAdapterNV = new MyAdapterNV(TITLES, ICONS, NAME, EMAIL, PROFILE);
 
         mRecyclerViewNV.setAdapter(mAdapterNV);
+
         mLayoutManagerNV = new LinearLayoutManager(this);
         mRecyclerViewNV.setLayoutManager(mLayoutManagerNV);
 

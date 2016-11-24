@@ -5,6 +5,7 @@ package com.skapp.lj.mates;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.R.attr.start;
 
 /**
  * Created by hp1 on 28-12-2014.
@@ -66,6 +69,11 @@ public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
                 public void onClick(View view) {
                     int position = getAdapterPosition();
                     Toast.makeText(view.getContext(), "Positon : " + position, Toast.LENGTH_SHORT).show();
+//                    if(position == 0)
+//                    {
+//                        Intent intent = new Intent(view.getContext(),QuestionActivity.class);
+//                        view.getContext().startActivity(intent);
+//                    }
                 }
             });
         }
