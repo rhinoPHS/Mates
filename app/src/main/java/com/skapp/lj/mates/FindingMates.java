@@ -129,7 +129,6 @@ public class FindingMates extends AppCompatActivity {
         /* 리스트뷰 메뉴 항목 */
         flContainer = (FrameLayout) findViewById(R.id.activity_finding_mates);
 
-
     }
 
     @Override
