@@ -99,11 +99,7 @@ public class FindingMates extends AppCompatActivity {
 
 
         /*navigation drawer ActionBar toggle*/
-
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-
         dlDrawer = (DrawerLayout) findViewById(R.id.dl_activity_finding_mates_drawer);
-
         drawerToggle = new ActionBarDrawerToggle(this, dlDrawer, R.string.open_drawer, R.string.close_drawer) {
             @Override
             public void onDrawerOpened(View drawerView) {
@@ -117,7 +113,6 @@ public class FindingMates extends AppCompatActivity {
         };
         dlDrawer.addDrawerListener(drawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
 
     }
 
@@ -164,24 +159,6 @@ public class FindingMates extends AppCompatActivity {
         if (drawerToggle.onOptionsItemSelected(item))
             return true;
         return super.onOptionsItemSelected(item);
-    }
-
-    ;
-
-    public void clickprofile(View view) {
-        Toast.makeText(this, "profile", Toast.LENGTH_SHORT).show();
-    }
-
-    public void clickchat(View view) {
-        Toast.makeText(this, "char", Toast.LENGTH_SHORT).show();
-    }
-
-    public void clicksetting(View view) {
-        Toast.makeText(this, "setting", Toast.LENGTH_SHORT).show();
-    }
-
-    public void logout(View view) {
-        Toast.makeText(this, "logout", Toast.LENGTH_SHORT).show();
     }
 
     public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
