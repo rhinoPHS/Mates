@@ -5,7 +5,7 @@
     android:id="@+id/dl_activity_finding_mates_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.skapp.lj.mates.FindingMates">
+    tools:context="com.skapp.lj.mates.FindingMatesActivity">
 
     <FrameLayout
         android:id="@+id/activity_finding_mates"

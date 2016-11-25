@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.skapp.lj.mates.ProfileActivity">
 
-    <include layout="@layout/profile_main"/>
-    <include layout="@layout/profile_photo"/>
+    <include layout="@layout/profile_update_main"/>
+    <include layout="@layout/profile_update_photo"/>
 
 </FrameLayout>

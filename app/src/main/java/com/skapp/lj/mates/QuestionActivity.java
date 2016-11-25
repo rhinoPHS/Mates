@@ -117,7 +117,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void showResultMates(View view) {
-        Intent intent = new Intent(this, FindingMates.class);
+        Intent intent = new Intent(this, FindingMatesActivity.class);
         startActivity(intent);
     }
 

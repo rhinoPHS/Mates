@@ -18,11 +18,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FindingMates"
+            android:name=".FindingMatesActivity"
             android:label="@string/FindingMates_name" />
-        <activity android:name=".Mate_detail" />
-        <activity android:name=".Profile"
-                  android:label="Profile"></activity>
+        <activity android:name=".MateDetailActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile" />
+        <activity android:name=".ProfileUpdateActivity"
+            android:label="ProfileUpdate"></activity>
     </application>
 
 </manifest>

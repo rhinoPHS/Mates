@@ -2,9 +2,7 @@ package com.skapp.lj.mates;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,24 +14,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
-
-public class FindingMates extends AppCompatActivity {
+public class FindingMatesActivity extends AppCompatActivity {
 
     //First We Declare Titles And Icons For Our Navigation Drawer List View
     //This Icons And Titles Are holded in an Array as you can see
 
-    String TITLES[] = {"Profile", "Message", "Settings", "Logout", "etc"};
+    String TITLES[] = {"ProfileActivity", "Message", "Settings", "Logout", "etc"};
     int ICONS[] = {R.drawable.user24, R.drawable.user24, R.drawable.user24, R.drawable.user24, R.drawable.user24};
     //Similarly we Create a String Resource for the name and email in the header view
     //And we also create a int resource for profile picture in the header view
@@ -66,7 +60,7 @@ public class FindingMates extends AppCompatActivity {
         /*NV start*/
         mRecyclerViewNV = (RecyclerView) findViewById(R.id.RecyclerView);
         mRecyclerViewNV.setHasFixedSize(true);
-        mAdapterNV = new MyAdapterNV(TITLES, ICONS, NAME, EMAIL, PROFILE);
+        mAdapterNV = new NavDrawerMyAdapter(TITLES, ICONS, NAME, EMAIL, PROFILE);
 
         mRecyclerViewNV.setAdapter(mAdapterNV);
 
@@ -174,7 +168,7 @@ public class FindingMates extends AppCompatActivity {
                     public void onClick(View view) {
                         int position = getAdapterPosition();
                         Toast.makeText(getApplicationContext(), "Positon : " + position, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Mate_detail.class);
+                        Intent intent = new Intent(getApplicationContext(), MateDetailActivity.class);
                         startActivity(intent);
                     }
                 });

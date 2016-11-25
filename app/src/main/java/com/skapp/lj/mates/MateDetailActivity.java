@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Mate_detail extends AppCompatActivity {
+public class MateDetailActivity extends AppCompatActivity {
     private int mSelect = 0;
 
     @Override
@@ -23,7 +23,7 @@ public class Mate_detail extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.mymenu, menu);
+        inflater.inflate(R.menu.mate_detail_menu, menu);
         return true;
     }
 
@@ -37,7 +37,7 @@ public class Mate_detail extends AppCompatActivity {
                 final CharSequence[] items = {"사기꾼","부적절한 내용","더이상사용하지 않는 계정","기타이유"};
                 final EditText content = new EditText(this);
                 content.setHint("내용을 입력해주세요");
-                new AlertDialog.Builder(Mate_detail.this)
+                new AlertDialog.Builder(MateDetailActivity.this)
                         .setTitle("신고항목을 선택해주세요")
                         .setSingleChoiceItems(items, mSelect, new DialogInterface.OnClickListener() {
                             @Override

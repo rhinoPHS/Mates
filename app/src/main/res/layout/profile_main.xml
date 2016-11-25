@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.skapp.lj.mates.Profile">
+    tools:context="com.skapp.lj.mates.ProfileActivity">
 
     <TextView
         android:id="@+id/txtV_ProfileName"

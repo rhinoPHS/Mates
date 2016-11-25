@@ -4,7 +4,6 @@ package com.skapp.lj.mates;
  * Created by a on 2016-11-24.
  */
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,12 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.R.attr.start;
-
 /**
  * Created by hp1 on 28-12-2014.
  */
-public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
+public class NavDrawerMyAdapter extends RecyclerView.Adapter<NavDrawerMyAdapter.ViewHolder> {
 
     private static final int TYPE_HEADER = 0;  // Declaring Variable to Understand which View is being worked on
     // IF the view under inflation and population is header or Item
@@ -73,7 +70,7 @@ public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
                     switch (position)
                     {
                         case 0:case 1:
-                            intent = new Intent(view.getContext(),Profile.class);
+                            intent = new Intent(view.getContext(),ProfileActivity.class);
                             view.getContext().startActivity(intent);
                             break;
                         case 2:
@@ -98,8 +95,8 @@ public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
     }
 
 
-    MyAdapterNV(String Titles[], int Icons[], String Name, String Email, int Profile) {
-        // MyAdapterNV Constructor with titles and icons parameter
+    NavDrawerMyAdapter(String Titles[], int Icons[], String Name, String Email, int Profile) {
+        // NavDrawerMyAdapter Constructor with titles and icons parameter
         // titles, icons, name, email, profile pic are passed from the main activity as we
         mNavTitles = Titles;                //have seen earlier
         mIcons = Icons;
@@ -118,7 +115,7 @@ public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
     // and pass it to the view holder
 
     @Override
-    public MyAdapterNV.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public NavDrawerMyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         if (viewType == TYPE_ITEM) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row, parent, false); //Inflating the layout
@@ -147,7 +144,7 @@ public class MyAdapterNV extends RecyclerView.Adapter<MyAdapterNV.ViewHolder> {
     // Tells us item at which position is being constructed to be displayed and the holder id of the holder object tell us
     // which view type is being created 1 for item row
     @Override
-    public void onBindViewHolder(MyAdapterNV.ViewHolder holder, int position) {
+    public void onBindViewHolder(NavDrawerMyAdapter.ViewHolder holder, int position) {
         if (holder.Holderid == 1) {                              // as the list view is going to be called after the header view so we decrement the
             // position by 1 and pass it to the holder while setting the text and image
             holder.textView.setText(mNavTitles[position - 1]); // Setting the Text with the array of our Titles

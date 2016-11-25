@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     TextView txtV_ProfileName;
     TextView txtV_UserName;
@@ -46,7 +46,8 @@ public class Profile extends AppCompatActivity {
         btn_ProfileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "프로필수정", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(),ProfileUpdateActivity.class);
+                startActivity(intent);
             }
         });
 
