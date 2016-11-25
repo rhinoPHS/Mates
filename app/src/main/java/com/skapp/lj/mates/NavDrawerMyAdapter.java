@@ -4,6 +4,7 @@ package com.skapp.lj.mates;
  * Created by a on 2016-11-24.
  */
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -74,10 +75,12 @@ public class NavDrawerMyAdapter extends RecyclerView.Adapter<NavDrawerMyAdapter.
                             view.getContext().startActivity(intent);
                             break;
                         case 2:
-                            Toast.makeText(view.getContext(),"message",Toast.LENGTH_SHORT).show();
+                            intent = new Intent(view.getContext(),MessageActivity.class);
+                            view.getContext().startActivity(intent);
                             break;
                         case 3:
-                            Toast.makeText(view.getContext(),"setting",Toast.LENGTH_SHORT).show();
+                            intent = new Intent(view.getContext(),SettingActivity.class);
+                            view.getContext().startActivity(intent);
                             break;
                         case 4:
                             Toast.makeText(view.getContext(),"logout",Toast.LENGTH_SHORT).show();

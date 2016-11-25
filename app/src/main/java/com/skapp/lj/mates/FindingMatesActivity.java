@@ -34,7 +34,7 @@ public class FindingMatesActivity extends AppCompatActivity {
 
     String NAME = "Akash Bangad";
     String EMAIL = "akash.bangad@android4devs.com";
-    int PROFILE = R.drawable.avatar;
+    int PROFILE = R.drawable.user;
 
     private Toolbar toolbar;                              // Declaring the Toolbar Object
 

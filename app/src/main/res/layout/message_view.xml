@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card:cardCornerRadius="3dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/CIV_MessagePhoto"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="16dp"
+                android:src="@drawable/user" />
+
+            <TextView
+                android:id="@+id/txtV_MessageName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@id/CIV_MessagePhoto"
+                android:text="이름"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/txtV_MessageContent"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/txtV_MessageName"
+                android:layout_toRightOf="@id/CIV_MessagePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내용" />
+
+            <TextView
+                android:id="@+id/txtV_Messagetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:56 Am"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

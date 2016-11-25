@@ -64,7 +64,8 @@ public class ProfileActivity extends AppCompatActivity {
         btn_RegionUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "지역수정", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(intent);
             }
         });
 
