@@ -68,7 +68,9 @@ public class MessageActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         int position = getAdapterPosition();
-                        Toast.makeText(getApplicationContext(), "Positon : " + position, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getApplicationContext(), "Positon : " + position, Toast.LENGTH_SHORT).show();
+                          Intent intent = new Intent(view.getContext(), ChatActivity.class);
+                          view.getContext().startActivity(intent);
                     }
                 });
             }

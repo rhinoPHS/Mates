@@ -1,6 +1,7 @@
 package com.skapp.lj.mates;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +32,8 @@ public class MateDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.send_message:
-                Toast.makeText(this, "메시지보내기", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this,ChatActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.report:
                 final CharSequence[] items = {"사기꾼","부적절한 내용","더이상사용하지 않는 계정","기타이유"};
