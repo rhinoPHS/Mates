@@ -9,4 +9,10 @@
         <item >부산</item>
         <item >대전</item>
     </string-array>
+
+    <string-array name="setting">
+        <item >학생만</item>
+        <item >일반인만</item>
+        <item >모두표시</item>
+    </string-array>
 </resources>

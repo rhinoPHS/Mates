@@ -9,5 +9,6 @@
 
     <include layout="@layout/profile_update_main"/>
     <include layout="@layout/profile_update_photo"/>
+    <include layout="@layout/stuwork"/>
 
 </FrameLayout>

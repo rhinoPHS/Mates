@@ -40,7 +40,7 @@ public class FindingMatesActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerViewNV;                           // Declaring RecyclerView
     RecyclerView.Adapter mAdapterNV;                        // Declaring Adapter For Recycler View
-    RecyclerView.LayoutManager mLayoutManagerNV;            // Declaring Layout Manager as a linear layout manager
+    RecyclerView.LayoutManager mLayoutManagerNV;            // Declaring Layout Manager as a linear layout worker
     DrawerLayout Drawer;                                  // Declaring DrawerLayout
     ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggl
 
@@ -180,7 +180,7 @@ public class FindingMatesActivity extends AppCompatActivity {
             mDataset = myDataset;
         }
 
-        // Create new views (invoked by the layout manager)
+        // Create new views (invoked by the layout worker)
         @Override
         public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                        int viewType) {
@@ -192,7 +192,7 @@ public class FindingMatesActivity extends AppCompatActivity {
             return vh;
         }
 
-        // Replace the contents of a view (invoked by the layout manager)
+        // Replace the contents of a view (invoked by the layout worker)
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             // - get element from your dataset at this position
@@ -202,7 +202,7 @@ public class FindingMatesActivity extends AppCompatActivity {
             holder.txtV_say.setText(mDataset.get(position).txt_say);
         }
 
-        // Return the size of your dataset (invoked by the layout manager)
+        // Return the size of your dataset (invoked by the layout worker)
         @Override
         public int getItemCount() {
             return mDataset.size();

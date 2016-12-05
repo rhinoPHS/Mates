@@ -10,9 +10,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.skapp.lj.mates.SettingActivity">
 
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나이" />
+
+    <SeekBar
+        android:id="@+id/seekBar_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/age" />
+
+    <TextView
+        android:id="@+id/txtV_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekBar_setting"
+        android:gravity="center_horizontal"
+        android:text="" />
+
+
+    <Spinner
+        android:id="@+id/spinner_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtV_setting"
+        android:layout_marginBottom="8dp"
+        android:entries="@array/setting" />
+
     <ListView
         android:id="@+id/listV_setting"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner_setting"></ListView>
 
 </RelativeLayout>

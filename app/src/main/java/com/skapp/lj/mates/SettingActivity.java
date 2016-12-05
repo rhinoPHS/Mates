@@ -6,16 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.R.attr.rating;
+import static android.R.id.list;
 
 public class SettingActivity extends AppCompatActivity {
+    int brightness = 50;
     ListView list;
     String[] titles = {
             "수신표시", "계정활성화",};
@@ -37,8 +41,48 @@ public class SettingActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(), titles[position], Toast.LENGTH_SHORT).show();
             }
         });
+
+        SeekBar seekBar = (SeekBar)findViewById(R.id.seekBar_setting);
+        seekBar.setProgress (20);
+        seekBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener () {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar,
+                                                  int progress, boolean fromUser) {
+                        printSelected(progress);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        doAfterTrack();
+                    }
+                });
+    }
+    public void printSelected(int value){
+        TextView tv = (TextView)findViewById(R.id.txtV_setting);
+        tv.setText(String.valueOf(value));
+//        setBrightness(value);
     }
 
+    private void setBrightness(int value){
+        if (value < 10) value = 10;
+        else if (value > 100)  value = 100;
+
+        brightness = value;
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = (float)value / 100;
+        lp.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
+        getWindow().setAttributes(lp);
+    }
+
+    private void doAfterTrack(){
+        TextView tv = (TextView)findViewById(R.id.txtV_setting);
+        tv.setText(tv.getText());
+    }
     public class CustomList extends ArrayAdapter< String > {
 
         public CustomList(Context context, int resId, String[] items) {

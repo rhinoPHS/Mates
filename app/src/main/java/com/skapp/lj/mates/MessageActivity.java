@@ -81,7 +81,7 @@ public class MessageActivity extends AppCompatActivity {
             mDataset = myDataset;
         }
 
-        // Create new views (invoked by the layout manager)
+        // Create new views (invoked by the layout worker)
         @Override
         public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             // create a new view
@@ -92,7 +92,7 @@ public class MessageActivity extends AppCompatActivity {
             return vh;
         }
 
-        // Replace the contents of a view (invoked by the layout manager)
+        // Replace the contents of a view (invoked by the layout worker)
         @Override
         public void onBindViewHolder(MyAdapter.ViewHolder holder, int position) {
             // - get element from your dataset at this position
@@ -103,7 +103,7 @@ public class MessageActivity extends AppCompatActivity {
             holder.txtV_Messagetime.setText(mDataset.get(position).texttime);
         }
 
-        // Return the size of your dataset (invoked by the layout manager)
+        // Return the size of your dataset (invoked by the layout worker)
         @Override
         public int getItemCount() {
             return mDataset.size();
