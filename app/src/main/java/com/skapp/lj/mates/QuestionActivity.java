@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class QuestionActivity extends AppCompatActivity {
+public class QuestionActivity extends BaseActivity {
 
 
     private int resultCount;
@@ -35,6 +35,7 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questiion);
+        mtextView.setText("Questions");
 
         resultMates = (Button) findViewById(R.id.resultMates);
 

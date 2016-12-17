@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "186144425700",
+    "firebase_url": "https://perfect-flatmate.firebaseio.com",
+    "project_id": "perfect-flatmate",
+    "storage_bucket": "perfect-flatmate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186144425700:android:84120085c58da644",
+        "android_client_info": {
+          "package_name": "com.skapp.lj.mates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186144425700-s3q088k1opmcr1j77gaio5gkmtp9c1ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjEAREz1j_4O5WLvIjcX9KKPMYcKlUlPg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

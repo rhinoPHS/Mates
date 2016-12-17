@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 16. 12. 16 오후 7:47. buckle Lab. All Rights Reserved.
+  ~ Create by rhino Hae Seong Park
+  ~
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro">
+
+    <Button
+        android:id="@+id/txtV_login"
+        android:textColor="@android:color/white"
+        android:text="로그인"
+        android:background="@null"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLoginActivity"/>
+
+    <Button
+        android:id="@+id/txtV_anonymousLogin"
+        android:textColor="@android:color/white"
+        android:text="둘러보기"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onAnonymousLogin"/>
+
+</RelativeLayout>

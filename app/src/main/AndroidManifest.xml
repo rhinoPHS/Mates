@@ -18,8 +18,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".QuestionActivity"
-            android:label="@string/questions_name">
-        </activity>
+            android:label="@string/questions_name"></activity>
         <activity
             android:name=".FindingMatesActivity"
             android:label="@string/FindingMates_name" />
@@ -52,13 +51,22 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".ChatActivity" />
-        <activity android:name=".IamActivity">
+
+        <activity android:name=".IamActivity" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/fullscreen" />
+        <activity
+            android:name=".IntroActivity"
+            android:theme="@style/fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

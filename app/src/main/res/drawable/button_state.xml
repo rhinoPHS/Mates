@@ -3,6 +3,6 @@
     <item android:drawable="@color/buttonSelected" android:state_pressed="true" /> <!-- pressed -->
     <item android:drawable="@color/buttonSelected" android:state_focused="true" /><!-- focused -->
     <item android:drawable="@color/buttonSelected" android:state_selected="true" />
-    <item android:drawable="@color/colorPrimary" /> <!-- default -->
+    <item android:drawable="@color/colorPrimaryDark" /> <!-- default -->
 
 </selector>
