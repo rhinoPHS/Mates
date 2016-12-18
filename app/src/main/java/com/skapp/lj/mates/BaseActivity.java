@@ -1,5 +1,6 @@
 package com.skapp.lj.mates;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.tsengvn.typekit.TypekitContextWrapper;
 
 /**
  * Created by rhinoPHS
@@ -40,5 +43,10 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
         mtextView= (TextView)findViewById(R.id.txtV_actionBarText);
+    }
+    @Override
+    protected  void attachBaseContext(Context newbase)
+    {
+        super.attachBaseContext(TypekitContextWrapper.wrap(newbase));
     }
 }

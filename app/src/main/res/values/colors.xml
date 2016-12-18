@@ -7,4 +7,18 @@
     <color name="colorText">#8440cf</color>
     <color name="background">#d8d8d8</color>
 
+    <color name="white">#FFFFFF</color>
+    <color name="kakaocotextcolor">#3C1E1E</color>
+
+    <color name="kakaocolor">#FFEB00</color>
+    <color name="kakaocolorselected">#BFFFEB00</color>
+
+    <color name="facebookcolor">#3B5998</color>
+    <color name="facebookcolorselected">#E63B5998</color>
+
+    <color name="googlecolor">#D64136</color>
+    <color name="googlecolorseected">#E6D64136</color>
+
+    <color name="navercolor">#1EC800</color>
+    <color name="navercolorselected">#BF1EC800</color>
 </resources>

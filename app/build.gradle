@@ -43,5 +43,7 @@ dependencies {
     compile 'com.google.firebase:firebase-crash:9.6.1'
     //firebase 실시간 데이터베이스
     compile 'com.google.firebase:firebase-database:9.6.1'
+    //커스텀 폰트 적용
+    compile 'com.tsengvn:typekit:1.0.1'
 }
 apply plugin: 'com.google.gms.google-services'

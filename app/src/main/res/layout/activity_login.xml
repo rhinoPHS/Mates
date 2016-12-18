@@ -1,20 +1,132 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 16. 12. 16 오후 8:31. buckle Lab. All Rights Reserved.
   ~ Create by rhino Hae Seong Park
   ~
   -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/background">
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="32dp"
+        android:src="@drawable/perf" />
+
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/googlebaccolor"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/google_icon" />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="구글 로그인"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:id="@+id/textView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/kakaobagcolor"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/kakao_icon" />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="카카오 로그인"
+            android:textColor="@color/kakaocotextcolor"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/facebookbagcolor"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/facebook_icon" />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="페이스북 로그인"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
-</RelativeLayout>
+    <LinearLayout
+        android:clickable="true"
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/naverbagcolor"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/symbol"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/naver_icon" />
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="네이버 로그인"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>
