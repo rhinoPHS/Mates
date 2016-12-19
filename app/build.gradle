@@ -19,6 +19,9 @@ android {
         }
     }
 }
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -45,5 +48,8 @@ dependencies {
     compile 'com.google.firebase:firebase-database:9.6.1'
     //커스텀 폰트 적용
     compile 'com.tsengvn:typekit:1.0.1'
+
+
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
 }
 apply plugin: 'com.google.gms.google-services'

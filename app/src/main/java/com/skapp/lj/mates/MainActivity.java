@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                     U.getInstance().log("Main 익명 확인 "+user.getEmail());
                 }
                 // 상태값 변경
-
             }
         };
     }
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         // 여러 화면에서 세션을 유지하면서 진행되다가 로그아웃되면 혹은
-        // 세션이 종료되는 상황이 비정상적인 상황이 발생되어서 로그 아웃처리를
+        // 세션이 종료되는 비정상적인 상황이 발생되어서 로그 아웃처리를
         // 해야 한다면 해제를 따로 하지 않고 유지하여 발생시 처리한다.
         // 인증 관련 리스너 해제
         if (mAuth != null && mAuthListener != null)
@@ -97,5 +96,10 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+    public void onLogout(View view){
+        U.getInstance().log("익명 로그아웃 요청");
+        // 로그 아웃을 하고, 새로 로그인시는 익명을 요청해서 가야한다.
+        mAuth.signOut();
     }
 }

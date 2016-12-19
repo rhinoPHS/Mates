@@ -12,6 +12,7 @@
     android:background="@drawable/intro">
 
     <Button
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:id="@+id/txtV_anonymousLogin"
         android:layout_width="match_parent"
@@ -20,19 +21,29 @@
         android:background="@null"
         android:onClick="onAnonymousLogin"
         android:layout_centerVertical="true"
-        android:text="둘러보기"
+        android:text="시작하기"
         android:textColor="@android:color/white" />
 
+    <!--<Button-->
+        <!--android:gravity="center"-->
+        <!--android:layout_below="@id/txtV_anonymousLogin"-->
+        <!--android:id="@+id/txtV_login"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@null"-->
+        <!--android:onClick="onLoginActivity"-->
+        <!--android:text="로그인"-->
+        <!--android:textColor="@android:color/white" />-->
+
     <Button
-        android:gravity="center"
         android:layout_below="@id/txtV_anonymousLogin"
-        android:id="@+id/txtV_login"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
         android:background="@null"
-        android:onClick="onLoginActivity"
-        android:text="로그인"
+        android:onClick="onLogout"
+        android:text="로그아웃"
         android:textColor="@android:color/white" />
 
 

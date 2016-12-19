@@ -23,13 +23,15 @@
         android:src="@drawable/perf" />
 
     <LinearLayout
-        android:clickable="true"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/google_login"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/googlebaccolor"
+        android:clickable="true"
         android:gravity="center"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:onClick="onGoogleLogin">
 
         <ImageView
             android:layout_width="50dp"
@@ -38,23 +40,24 @@
             android:src="@drawable/google_icon" />
 
         <TextView
-            android:layout_marginLeft="20dp"
+            android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="구글 로그인"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:id="@+id/textView" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
-        android:clickable="true"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/kakao_login"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/kakaobagcolor"
+        android:clickable="true"
         android:gravity="center"
         android:padding="10dp">
 
@@ -65,9 +68,9 @@
             android:src="@drawable/kakao_icon" />
 
         <TextView
-            android:layout_marginLeft="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="카카오 로그인"
@@ -76,11 +79,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:clickable="true"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/facebook_login"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/facebookbagcolor"
+        android:clickable="true"
         android:gravity="center"
         android:padding="10dp">
 
@@ -91,9 +95,9 @@
             android:src="@drawable/facebook_icon" />
 
         <TextView
-            android:layout_marginLeft="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="페이스북 로그인"
@@ -103,11 +107,11 @@
 
 
     <LinearLayout
-        android:clickable="true"
-        android:id="@+id/bg"
+        android:id="@+id/naver_login"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@drawable/naverbagcolor"
+        android:clickable="true"
         android:gravity="center"
         android:padding="10dp">
 
@@ -119,10 +123,10 @@
             android:src="@drawable/naver_icon" />
 
         <TextView
-            android:layout_marginLeft="20dp"
             android:id="@+id/text"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="네이버 로그인"

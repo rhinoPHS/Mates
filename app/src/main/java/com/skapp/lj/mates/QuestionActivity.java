@@ -48,15 +48,15 @@ public class QuestionActivity extends BaseActivity {
 
         items = new ArrayList<QuestionClass>();
 
-        final QuestionClass q1 = new QuestionClass("당신의 성별은 무엇입니까?", "남자1", "여자1");
+        final QuestionClass q1 = new QuestionClass("당신의 성별은 무엇입니까?", "남자1", "여자1", "1",R.color.colorText);
         items.add(q1);
-        QuestionClass q2 = new QuestionClass("당신의 성별은 무엇입니까?", "남자2", "여자2");
+        QuestionClass q2 = new QuestionClass("당신의 성별은 무엇입니까?", "남자2", "여자2", "2",R.color.colorText2);
         items.add(q2);
-        QuestionClass q3 = new QuestionClass("당신의 성별은 무엇입니까?", "남자3", "여자3");
+        QuestionClass q3 = new QuestionClass("당신의 성별은 무엇입니까?", "남자3", "여자3", "3",R.color.colorText3);
         items.add(q3);
-        QuestionClass q4 = new QuestionClass("당신의 성별은 무엇입니까?", "남자4", "여자4");
+        QuestionClass q4 = new QuestionClass("당신의 성별은 무엇입니까?", "남자4", "여자4", "4",R.color.colorText4);
         items.add(q4);
-        QuestionClass q5 = new QuestionClass("당신의 성별은 무엇입니까?", "남자5", "여자5");
+        QuestionClass q5 = new QuestionClass("당신의 성별은 무엇입니까?", "남자5", "여자5", "5",R.color.colorText5);
         items.add(q5);
 
         questionAdapter = new QuestionAdapter(this, R.layout.item, items);

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="city">
+    <string-array name="si">
+        <item >광역시•도</item>
         <item >서울</item>
         <item >경기</item>
         <item >부천</item>
@@ -8,6 +9,19 @@
         <item >파주</item>
         <item >부산</item>
         <item >대전</item>
+    </string-array>
+
+    <string-array name="gu">
+        <item >시•군•구</item>
+        <item >강남구</item>
+        <item >강동구</item>
+        <item >강북구</item>
+        <item >강서구</item>
+    </string-array>
+
+    <string-array name="dong">
+        <item >읍•면•동</item>
+        <item >노현동</item>
     </string-array>
 
     <string-array name="setting">

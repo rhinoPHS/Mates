@@ -103,6 +103,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/gender"
@@ -125,8 +126,55 @@
             android:id="@+id/numberPicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true">
-        </NumberPicker>
+            android:layout_centerHorizontal="true"></NumberPicker>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/age"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/card"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="13dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지역"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinner_si"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:entries="@array/si" />
+
+        <Spinner
+            android:id="@+id/spinner_gu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/spinner_si"
+            android:entries="@array/gu" />
+
+        <Spinner
+            android:id="@+id/spinner_dong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_gu"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/spinner_si"
+            android:entries="@array/dong" />
 
     </RelativeLayout>
 

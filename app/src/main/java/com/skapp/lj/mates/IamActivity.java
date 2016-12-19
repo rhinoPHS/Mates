@@ -23,7 +23,7 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 public class IamActivity extends BaseActivity {
 
     RadioButton mStudent, mNomal,mMale,mFemale;
-    int age;
+    int age=20;
 
 
     @Override

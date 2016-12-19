@@ -1,81 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:layout_margin="40dp">
+    android:layout_height="370dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/question_shape"
+    android:id="@+id/relativeItem">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="@android:color/white"
-        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Section"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/questionTitle"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center"
-            android:text="Question Title"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="16dp"
+        android:text="1/10"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/answerLeft"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
-            android:background="@drawable/button_state"
-            android:padding="8dp"
-            android:text="Left"
-            android:textColor="@android:color/white"
-            android:textAllCaps="false" />
+    <Button
+        android:id="@+id/answerRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        android:background="@null"
+        android:drawableRight="@drawable/arrow_right_white"
+        android:text="Answer02"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/answerRight"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/button_state"
-            android:padding="8dp"
-            android:text="Right"
-            android:textColor="@android:color/white"
-            android:textAllCaps="false" />
-
-
-        <!--<TextView-->
-        <!--android:paddingTop="8dp"-->
-        <!--android:layout_weight="6"-->
-        <!--android:id="@+id/helloText"-->
-        <!--android:textSize="40sp"-->
-        <!--android:background="#E339"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:gravity="center_horizontal"-->
-        <!--tools:text="@string/hello_world"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/answerLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"
+        android:background="@null"
+        android:drawableLeft="@drawable/arrow_left_white"
+        android:text="Answer01"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
 
 
-    <!--<View-->
-    <!--android:id="@+id/item_swipe_left_indicator"-->
-    <!--android:alpha="0"-->
-    <!--android:layout_width="20dp"-->
-    <!--android:layout_height="20dp"-->
-    <!--android:layout_margin="10dp"-->
-    <!--android:background="#A5F" />-->
+    <TextView
+        android:id="@+id/questionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="당신은 아침형\n인간입니까?"
+        android:textColor="@android:color/white"
+        android:textSize="40sp" />
 
-    <!--<View-->
-    <!--android:id="@+id/item_swipe_right_indicator"-->
-    <!--android:alpha="0"-->
-    <!--android:layout_width="20dp"-->
-    <!--android:layout_height="20dp"-->
-    <!--android:layout_margin="10dp"-->
-    <!--android:layout_gravity="right"-->
-    <!--android:background="#5AF" />-->
 
-</FrameLayout>
+</RelativeLayout>
