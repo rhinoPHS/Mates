@@ -5,15 +5,20 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal|bottom"
     android:layout_marginBottom="20dp"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/left"
+    <!--<Button-->
+        <!--android:id="@+id/left"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:text="Left"-->
+        <!--android:visibility="invisible" />-->
+    <ImageButton
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Left"
-        android:visibility="invisible" />
+        android:background="@drawable/refreshbtn"/>
 
     <Button
         android:id="@+id/resultMates"
@@ -24,12 +29,12 @@
         android:visibility="invisible"
         android:onClick="showResultMates"/>
 
-    <Button
-        android:id="@+id/right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Right"
-        android:visibility="invisible" />
+    <!--<Button-->
+        <!--android:id="@+id/right"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:text="Right"-->
+        <!--android:visibility="invisible" />-->
 
 </LinearLayout>

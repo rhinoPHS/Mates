@@ -6,6 +6,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cardview"
         card:cardCornerRadius="3dp"
+        android:background="@drawable/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,17 +19,21 @@
                 "@layout/profile"/>
 
             <TextView
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
                 android:id="@+id/textview"
                 android:gravity="center|left"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:text="에릭남"/>
             <TextView
                 android:id="@+id/txtV_say"
                 android:gravity="center|left"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:text="인사말"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>

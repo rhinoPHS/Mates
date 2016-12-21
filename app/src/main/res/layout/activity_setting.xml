@@ -1,48 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.skapp.lj.mates.SettingActivity">
 
-    <TextView
+    <RelativeLayout
         android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="나이" />
-
-    <SeekBar
-        android:id="@+id/seekBar_setting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/age" />
+        android:layout_height="100dp"
+        android:layout_below="@id/gender"
+        android:background="@drawable/card"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="13dp"
+        android:layout_marginBottom="8dp">
 
-    <TextView
-        android:id="@+id/txtV_setting"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나이"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <NumberPicker
+            android:id="@+id/numberPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"></NumberPicker>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/option"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/seekBar_setting"
-        android:gravity="center_horizontal"
-        android:text="" />
-
-
-    <Spinner
-        android:id="@+id/spinner_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtV_setting"
+        android:layout_height="50dp"
+        android:layout_below="@id/gender"
+        android:background="@drawable/card"
+        android:orientation="horizontal"
         android:layout_marginBottom="8dp"
-        android:entries="@array/setting" />
+        android:paddingTop="16dp">
+        <Spinner
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/card"
+            android:id="@+id/spinner_setting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:entries="@array/setting" />
 
-    <ListView
-        android:id="@+id/listV_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinner_setting"></ListView>
+    </LinearLayout>
 
-</RelativeLayout>
+    <RelativeLayout
+        android:padding="8dp"
+        android:id="@+id/susin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/gender"
+        android:background="@drawable/card"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/notification"
+            android:layout_marginRight="8dp"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수신표시"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ToggleButton
+            android:textOff=""
+            android:textOn=""
+            android:background="@drawable/btn_toggle_state"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:id="@+id/usersetting"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/gender"
+        android:background="@drawable/card"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/usersetting"
+            android:layout_marginRight="8dp"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="계정활성화"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ToggleButton
+            android:textOff=""
+            android:textOn=""
+            android:background="@drawable/btn_toggle_state"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -22,7 +22,10 @@
             android:label="@string/questions_name"></activity>
         <activity
             android:name=".FindingMatesActivity"
-            android:label="@string/FindingMates_name" />
+            android:label="@string/FindingMates_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity android:name=".MateDetailActivity" />
         <activity
             android:name=".ProfileActivity"
@@ -65,7 +68,6 @@
             android:theme="@style/fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

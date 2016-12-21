@@ -34,7 +34,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends BaseActivity implements
-        GoogleApiClient.OnConnectionFailedListener{
+        GoogleApiClient.OnConnectionFailedListener {
 
     GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
@@ -62,15 +62,14 @@ public class LoginActivity extends BaseActivity implements
 
         mAuth = FirebaseAuth.getInstance();
 
-        mAythListener = new FirebaseAuth.AuthStateListener(){
+        mAythListener = new FirebaseAuth.AuthStateListener() {
 
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user!=null){
+                if (user != null) {
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                }
-                else{
+                } else {
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
                 updateUI(user);
@@ -80,6 +79,7 @@ public class LoginActivity extends BaseActivity implements
         //페이스북로그인관련
 
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -132,28 +132,30 @@ public class LoginActivity extends BaseActivity implements
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Log.w(TAG, "signInWithCredential", task.getException());;
-                        }
-                        else
-                            Log.d(TAG,"sgnInWithCredential 성공");
+                            Log.w(TAG, "signInWithCredential", task.getException());
+                            ;
+                        } else
+                            Log.d(TAG, "sgnInWithCredential 성공");
                     }
                 });
     }
 
-    public void onGoogleLogin(View view){
+    public void onGoogleLogin(View view) {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
     }
+
     private void updateUI(FirebaseUser user) {
         if (user != null) {
-            Log.d(TAG,user.getEmail());
-            Log.d(TAG,user.getUid());
-            Log.d(TAG,""+user.getPhotoUrl());
-            Log.d(TAG,user.getDisplayName());
+            Log.d(TAG, user.getEmail());
+            Log.d(TAG, user.getUid());
+            Log.d(TAG, "" + user.getPhotoUrl());
+            Log.d(TAG, user.getDisplayName());
 
         } else {
         }

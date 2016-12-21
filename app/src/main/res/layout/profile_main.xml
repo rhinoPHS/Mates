@@ -15,7 +15,7 @@
         android:gravity="center"
         android:textSize="30sp"
         android:background="@color/buttonSelected"
-        android:text="프로필명" />
+        android:text="배경사진" />
 
     <LinearLayout
         android:background="@color/colorPrimary"
@@ -27,7 +27,7 @@
 
         <Button
             android:id="@+id/btn_ProfileUpdate"
-            android:drawableTop="@drawable/user24"
+            android:drawableTop="@drawable/edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="프로필수정"
@@ -35,7 +35,7 @@
             android:layout_marginBottom="16dp"/>
         <Button
             android:id="@+id/btn_QuestionUpdate"
-            android:drawableTop="@drawable/user24"
+            android:drawableTop="@drawable/msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="답변수정"
@@ -43,7 +43,7 @@
             android:layout_marginBottom="16dp"/>
         <Button
             android:id="@+id/btn_RegionUpdate"
-            android:drawableTop="@drawable/user24"
+            android:drawableTop="@drawable/pin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="지역수정"
