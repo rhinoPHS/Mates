@@ -182,11 +182,12 @@
         android:id="@+id/btn_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@drawable/background"
         android:onClick="onClick"
         android:text="NEXT"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

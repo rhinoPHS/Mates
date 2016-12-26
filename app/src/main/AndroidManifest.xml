@@ -8,7 +8,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -19,13 +19,11 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".QuestionActivity"
-            android:label="@string/questions_name"></activity>
+            android:label="@string/questions_name" />
         <activity
             android:name=".FindingMatesActivity"
             android:label="@string/FindingMates_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".MateDetailActivity" />
         <activity
             android:name=".ProfileActivity"
@@ -50,28 +48,30 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".ChatActivity" />
-
         <activity android:name=".IamActivity" />
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/fullscreen" />
         <activity
             android:name=".IntroActivity"
             android:theme="@style/fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
