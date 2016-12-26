@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import static com.google.android.gms.internal.zzsr.My;
+import static com.google.android.gms.internal.zzsr.*;
 
 public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText mInputMessage;

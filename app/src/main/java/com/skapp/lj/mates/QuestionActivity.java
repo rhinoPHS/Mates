@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -26,6 +27,8 @@ public class QuestionActivity extends BaseActivity {
     private QuestionAdapter questionAdapter;
     private ProgressBar mProgress;
 
+    private CircleAnimIndicator circleAnimIndicator;
+    private List<String> numberList;
 
     @InjectView(R.id.frame)
     SwipeFlingAdapterView flingContainer;
@@ -36,6 +39,21 @@ public class QuestionActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questiion);
         mtextView.setText("Questions");
+
+        circleAnimIndicator = (CircleAnimIndicator)findViewById(R.id.circleAnimIndicator);
+        numberList = new ArrayList<>();
+        numberList.add("1");
+        numberList.add("2");
+        numberList.add("3");
+        numberList.add("4");
+        numberList.add("5");
+        //원사이의 간격
+        circleAnimIndicator.setItemMargin(15);
+        //애니메이션 속도
+        circleAnimIndicator.setAnimDuration(300);
+        //indecator 생성
+        circleAnimIndicator.createDotPanel(numberList.size(), R.drawable.radio_off , R.drawable.radio_on);
+
 
         resultMates = (Button) findViewById(R.id.resultMates);
 
