@@ -23,19 +23,29 @@
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/card">
+            android:orientation="horizontal"
+            android:background="@drawable/card"
+            android:weightSum="10">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/search"/>
             <EditText
+                android:id="@+id/editT_schValue"
                 android:gravity="bottom"
                 android:maxLines="1"
                 android:textSize="11sp"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="8"
                 android:layout_height="match_parent"
                 android:hint="거주 예정지를 입력해주세요"/>
+
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_gravity="right"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search"/>
+
         </LinearLayout>
 
     </FrameLayout>
@@ -46,5 +56,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/background"
-        android:text="해당 거주지로 룸메이트 구하기" />
+        android:text="해당 거주지로 룸메이트 구하기"
+        android:id="@+id/btn_getRommmate" />
 </LinearLayout>
